@@ -46,4 +46,24 @@ function divide(...nums) {
   }, first);
 }
 
-module.exports = { add, subtract, multiply, divide };
+function modulo(a, b) {
+  // modulo: remainder of a divided by b
+  const [x, y] = [toNumber(a), toNumber(b)];
+  if (y === 0) throw new Error('Division by zero');
+  return x % y;
+}
+
+function power(base, exponent) {
+  // power: base raised to exponent
+  const [b, e] = [toNumber(base), toNumber(exponent)];
+  return Math.pow(b, e);
+}
+
+function squareRoot(n) {
+  // squareRoot: returns sqrt(n), throws on negative input
+  const x = toNumber(n);
+  if (x < 0) throw new Error('Square root of negative number');
+  return Math.sqrt(x);
+}
+
+module.exports = { add, subtract, multiply, divide, modulo, power, squareRoot };
